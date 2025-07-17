@@ -148,6 +148,52 @@ jobster_get_candidate_dashboard_side($candidate_id, 'dashboard'); ?>
             id="pxp-candidate-id" 
             value="<?php echo esc_attr($candidate_id); ?>"
         >
+
+        <!-- Subscription Status Widget -->
+        <?php 
+        $subscription = jobster_get_candidate_subscription_status($candidate_id);
+        $subscription_features = jobster_get_candidate_subscription_features($candidate_id);
+        $subscriptions_link = jobster_get_page_link('candidate-dashboard-subscriptions.php');
+        ?>
+        
+        <div class="row mt-4 mt-lg-5">
+            <div class="col-12">
+                <?php if ($subscription['has_subscription']) { ?>
+                    <div class="pxp-dashboard-subscription-widget">
+                        <h4><?php esc_html_e('Your Subscription', 'jobster'); ?></h4>
+                        <div class="pxp-subscription-plan-name">
+                            <?php echo esc_html($subscription['plan_name']); ?>
+                            <?php echo jobster_display_candidate_subscription_badge($candidate_id, 'small'); ?>
+                        </div>
+                        <?php if ($subscription['activation_date']) { ?>
+                            <div class="pxp-subscription-activation">
+                                <?php echo sprintf(__('Activated on %s', 'jobster'), date('F j, Y', strtotime($subscription['activation_date']))); ?>
+                            </div>
+                        <?php } ?>
+                        <?php if (!empty($subscription_features)) { ?>
+                            <ul class="pxp-subscription-features">
+                                <?php foreach ($subscription_features as $feature) { ?>
+                                    <li><?php echo esc_html($feature); ?></li>
+                                <?php } ?>
+                            </ul>
+                        <?php } ?>
+                        <div class="mt-3">
+                            <a href="<?php echo esc_url($subscriptions_link); ?>" class="btn btn-primary btn-sm">
+                                <?php esc_html_e('Manage Subscription', 'jobster'); ?>
+                            </a>
+                        </div>
+                    </div>
+                <?php } else { ?>
+                    <div class="pxp-subscription-upgrade-prompt">
+                        <h4><?php esc_html_e('Upgrade Your Profile', 'jobster'); ?></h4>
+                        <p><?php esc_html_e('Get more visibility and features with a premium subscription plan.', 'jobster'); ?></p>
+                        <a href="<?php echo esc_url($subscriptions_link); ?>" class="pxp-subscription-upgrade-btn">
+                            <?php esc_html_e('View Plans', 'jobster'); ?>
+                        </a>
+                    </div>
+                <?php } ?>
+            </div>
+        </div>
         <?php wp_nonce_field('charts_ajax_nonce', 'pxp-charts-security', true); ?>
 
         <div class="row mt-4 mt-lg-5">

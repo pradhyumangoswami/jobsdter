@@ -126,6 +126,14 @@ if (!function_exists('jobster_get_candidate_dashboard_top')):
                                         </a>
                                     </li>
                                 <?php }
+                                if ($subscriptions_link != '') { ?>
+                                    <li class="nav-item">
+                                        <a href="<?php echo esc_url($subscriptions_link); ?>">
+                                            <span class="fa fa-credit-card"></span>
+                                            <?php esc_html_e('Subscriptions', 'jobster'); ?>
+                                        </a>
+                                    </li>
+                                <?php }
                                 if ($apps_link != '') { ?>
                                     <li class="nav-item">
                                         <a href="<?php echo esc_url($apps_link); ?>">
@@ -342,6 +350,16 @@ if (!function_exists('jobster_get_candidate_dashboard_top')):
                                     href="<?php echo esc_url($profile_link); ?>"
                                 >
                                     <?php esc_html_e('Edit profile', 'jobster'); ?>
+                                </a>
+                            </li>
+                        <?php }
+                        if ($subscriptions_link != '') { ?>
+                            <li>
+                                <a 
+                                    class="dropdown-item" 
+                                    href="<?php echo esc_url($subscriptions_link); ?>"
+                                >
+                                    <?php esc_html_e('Subscriptions', 'jobster'); ?>
                                 </a>
                             </li>
                         <?php } ?>

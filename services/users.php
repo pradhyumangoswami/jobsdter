@@ -1236,4 +1236,85 @@ if (!function_exists('jobster_activate_user_type')):
 endif;
 add_action('wp_ajax_nopriv_jobster_activate_user_type', 'jobster_activate_user_type');
 add_action('wp_ajax_jobster_activate_user_type', 'jobster_activate_user_type');
+
+if (!function_exists('jobster_get_candidate_subscription_status')):
+    function jobster_get_candidate_subscription_status($candidate_id) {
+        $candidate_plan_id = get_post_meta($candidate_id, 'candidate_plan', true);
+        $candidate_plan_free = get_post_meta($candidate_id, 'candidate_plan_free', true);
+        $candidate_plan_activation = get_post_meta($candidate_id, 'candidate_plan_activation', true);
+        
+        if (!$candidate_plan_id) {
+            return array(
+                'has_subscription' => false,
+                'status' => 'none',
+                'plan_name' => '',
+                'is_free' => false,
+                'activation_date' => '',
+                'badge_class' => '',
+                'badge_text' => ''
+            );
+        }
+        
+        $plan_name = get_the_title($candidate_plan_id);
+        $is_free = ($candidate_plan_free == 1);
+        
+        return array(
+            'has_subscription' => true,
+            'status' => 'active',
+            'plan_name' => $plan_name,
+            'is_free' => $is_free,
+            'activation_date' => $candidate_plan_activation,
+            'badge_class' => $is_free ? 'pxp-badge-free' : 'pxp-badge-premium',
+            'badge_text' => $is_free ? __('Free Plan', 'jobster') : __('Premium', 'jobster')
+        );
+    }
+endif;
+
+if (!function_exists('jobster_display_candidate_subscription_badge')):
+    function jobster_display_candidate_subscription_badge($candidate_id, $size = 'small') {
+        $subscription = jobster_get_candidate_subscription_status($candidate_id);
+        
+        if (!$subscription['has_subscription']) {
+            return '';
+        }
+        
+        $size_class = ($size == 'large') ? 'pxp-subscription-badge-large' : 'pxp-subscription-badge-small';
+        
+        return '<span class="pxp-subscription-badge ' . $size_class . ' ' . esc_attr($subscription['badge_class']) . '">' 
+               . esc_html($subscription['badge_text']) . '</span>';
+    }
+endif;
+
+if (!function_exists('jobster_get_candidate_subscription_features')):
+    function jobster_get_candidate_subscription_features($candidate_id) {
+        $candidate_plan_id = get_post_meta($candidate_id, 'candidate_plan', true);
+        
+        if (!$candidate_plan_id) {
+            return array();
+        }
+        
+        $candidate_plan_unlimited = get_post_meta($candidate_id, 'candidate_plan_unlimited', true);
+        $candidate_plan_listings = get_post_meta($candidate_id, 'candidate_plan_listings', true);
+        $candidate_plan_featured = get_post_meta($candidate_id, 'candidate_plan_featured', true);
+        $candidate_plan_cv_access = get_post_meta($candidate_id, 'candidate_plan_cv_access', true);
+        
+        $features = array();
+        
+        if ($candidate_plan_unlimited == 1) {
+            $features[] = __('Unlimited Applications', 'jobster');
+        } else {
+            $features[] = sprintf(__('%s Applications', 'jobster'), $candidate_plan_listings);
+        }
+        
+        if ($candidate_plan_featured > 0) {
+            $features[] = sprintf(__('%s Featured Applications', 'jobster'), $candidate_plan_featured);
+        }
+        
+        if ($candidate_plan_cv_access == 1) {
+            $features[] = __('Resume Access', 'jobster');
+        }
+        
+        return $features;
+    }
+endif;
 ?>

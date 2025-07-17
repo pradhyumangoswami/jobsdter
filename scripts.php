@@ -149,6 +149,15 @@ add_action('admin_enqueue_scripts', 'jobster_enqueue_admin_scripts');
 if (!function_exists('jobster_enqueue_frontend_scripts')): 
     function jobster_enqueue_frontend_scripts() {
         $max_file_size = 100 * 1000 * 1000;
+        
+        // Enqueue subscription badges CSS
+        wp_enqueue_style(
+            'jobster-subscription-badges',
+            JOBSTER_PLUGIN_PATH . 'css/subscription-badges.css',
+            array(),
+            '1.0',
+            'all'
+        );
 
         wp_register_script(
             'pxp-cover-upload',

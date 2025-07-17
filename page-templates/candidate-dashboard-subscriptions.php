@@ -96,6 +96,30 @@ $this_url = jobster_get_page_link('candidate-dashboard-subscriptions.php'); ?>
     <div class="pxp-dashboard-content-header">
         <h1><?php esc_html_e('Membership Plans', 'jobster'); ?></h1>
         <p class="pxp-text-light"><?php esc_html_e('Manage your membership subscription plans.', 'jobster'); ?></p>
+        
+        <?php 
+        $subscription = jobster_get_candidate_subscription_status($candidate_id);
+        if ($subscription['has_subscription']) { ?>
+            <div class="pxp-subscription-status-card">
+                <h3><?php esc_html_e('Current Subscription', 'jobster'); ?></h3>
+                <div class="pxp-subscription-plan-name"><?php echo esc_html($subscription['plan_name']); ?></div>
+                <?php if ($subscription['activation_date']) { ?>
+                    <div class="pxp-subscription-activation">
+                        <?php echo sprintf(__('Activated on %s', 'jobster'), date('F j, Y', strtotime($subscription['activation_date']))); ?>
+                    </div>
+                <?php } ?>
+                
+                <?php 
+                $subscription_features = jobster_get_candidate_subscription_features($candidate_id);
+                if (!empty($subscription_features)) { ?>
+                    <ul class="pxp-subscription-features">
+                        <?php foreach ($subscription_features as $feature) { ?>
+                            <li><?php echo esc_html($feature); ?></li>
+                        <?php } ?>
+                    </ul>
+                <?php } ?>
+            </div>
+        <?php } ?>
     </div>
 
     <?php if ($payment_type == 'plan') { ?>
