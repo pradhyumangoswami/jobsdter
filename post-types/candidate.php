@@ -143,6 +143,9 @@ if (!function_exists('jobster_add_candidate_metaboxes')):
         add_meta_box('candidate-social-section', __('Social Media', 'jobster'), 'jobster_candidate_social_media_render', 'candidate', 'normal', 'default');
         add_meta_box('candidate-job-alerts-section', __('Job Alerts', 'jobster'), 'jobster_candidate_job_alerts_render', 'candidate', 'normal', 'default');
         add_meta_box('candidate-user-section', __('User', 'jobster'), 'jobster_candidate_user_render', 'candidate', 'normal', 'default');
+        
+        // Add subscription management metabox
+        add_meta_box('candidate-subscription-section', __('Subscription Management', 'jobster'), 'jobster_subscription_metabox_render', 'candidate', 'side', 'high');
     }
 endif;
 
@@ -1121,6 +1124,25 @@ if (!function_exists('jobster_candidate_meta_save')):
         }
         if (isset($_POST['candidate_user'])) {
             update_post_meta($post_id, 'candidate_user', sanitize_text_field($_POST['candidate_user']));
+        }
+
+        // Save subscription data
+        if (isset($_POST['candidate_subscription_status'])) {
+            update_post_meta($post_id, 'candidate_subscription_status', sanitize_text_field($_POST['candidate_subscription_status']));
+        }
+        if (isset($_POST['candidate_subscription_plan'])) {
+            update_post_meta($post_id, 'candidate_subscription_plan', sanitize_text_field($_POST['candidate_subscription_plan']));
+        }
+        if (isset($_POST['candidate_subscription_expiry'])) {
+            $expiry = sanitize_text_field($_POST['candidate_subscription_expiry']);
+            if (!empty($expiry)) {
+                update_post_meta($post_id, 'candidate_subscription_expiry', date('Y-m-d H:i:s', strtotime($expiry)));
+            } else {
+                delete_post_meta($post_id, 'candidate_subscription_expiry');
+            }
+        }
+        if (isset($_POST['candidate_profile_views'])) {
+            update_post_meta($post_id, 'candidate_profile_views', intval($_POST['candidate_profile_views']));
         }
 
         $candidates_fields_settings = get_option('jobster_candidates_fields_settings');
