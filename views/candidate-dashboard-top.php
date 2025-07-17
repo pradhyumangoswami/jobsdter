@@ -54,6 +54,7 @@ if (!function_exists('jobster_get_candidate_dashboard_top')):
         $password_link = jobster_get_page_link('candidate-dashboard-password.php');
         $inbox_link = jobster_get_page_link('candidate-dashboard-inbox.php');
         $notifications_link = jobster_get_page_link('candidate-dashboard-notifications.php');
+        $subscriptions_link = jobster_get_page_link('candidate-dashboard-subscriptions.php');
         $job_search_link = jobster_get_page_link('job-search.php'); ?>
 
         <div 
@@ -146,6 +147,14 @@ if (!function_exists('jobster_get_candidate_dashboard_top')):
                                         <a href="<?php echo esc_url($password_link); ?>">
                                             <span class="fa fa-lock"></span>
                                             <?php esc_html_e('Change Password', 'jobster'); ?>
+                                        </a>
+                                    </li>
+                                <?php }
+                                if ($subscriptions_link != '') { ?>
+                                    <li class="nav-item">
+                                        <a href="<?php echo esc_url($subscriptions_link); ?>">
+                                            <span class="fa fa-credit-card"></span>
+                                            <?php esc_html_e('Subscriptions', 'jobster'); ?>
                                         </a>
                                     </li>
                                 <?php } ?>

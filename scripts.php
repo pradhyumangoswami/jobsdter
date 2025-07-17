@@ -10,6 +10,9 @@ if (!function_exists('jobster_enqueue_admin_scripts')):
 
         // Font Awesome Style
         wp_enqueue_style('font-awesome', JOBSTER_PLUGIN_PATH . 'css/font-awesome.min.css', array(), '4.7.0', 'all');
+        
+        // Candidate Subscription Style
+        wp_enqueue_style('candidate-subscription', JOBSTER_PLUGIN_PATH . 'css/candidate-subscription.css', array(), '1.0', 'all');
 
         // Date Picker
         wp_register_style('pxp-datepicker', JOBSTER_PLUGIN_PATH . 'css/datepicker.css', array(), '1.0', 'all');

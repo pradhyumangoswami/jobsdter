@@ -168,6 +168,7 @@ $restrict_list =    isset($candidates_settings['jobster_candidate_restrict_list_
                                         <?php } ?>
                                         <div class="pxp-candidates-card-1-name">
                                             <?php echo esc_html($candidate_name); ?>
+                                            <?php echo jobster_get_candidate_subscription_badge($candidate_id, 'small'); ?>
                                         </div>
                                         <div class="pxp-candidates-card-1-title">
                                             <?php echo esc_html($candidate_title); ?>

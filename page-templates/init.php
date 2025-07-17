@@ -52,6 +52,7 @@ class JobsterPageTemplater {
             'candidate-dashboard-password.php'      => __('Candidate Dashboard - Change Password', 'jobster'),
             'candidate-dashboard-inbox.php'         => __('Candidate Dashboard - Inbox', 'jobster'),
             'candidate-dashboard-notifications.php' => __('Candidate Dashboard - Notifications', 'jobster'),
+            'candidate-dashboard-subscriptions.php' => __('Candidate Dashboard - Subscriptions', 'jobster'),
             'candidate-dashboard-apply.php'         => __('Candidate Dashboard - Apply', 'jobster'),
             'paypal-processor.php'                  => __('PayPal Processor', 'jobster'),
             'stripe-processor.php'                  => __('Stripe Processor', 'jobster'),
