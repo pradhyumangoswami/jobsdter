@@ -21,7 +21,11 @@ if ($payment_type == 'listing') {
     $redirect = jobster_get_page_link('company-dashboard-jobs.php');
 }
 if ($payment_type == 'plan') {
-    $redirect = jobster_get_page_link('company-dashboard-subscriptions.php');
+    if (isset($_GET['candidate_id'])) {
+        $redirect = jobster_get_page_link('candidate-dashboard-subscriptions.php');
+    } else {
+        $redirect = jobster_get_page_link('company-dashboard-subscriptions.php');
+    }
 }
 
 $payload = @file_get_contents('php://input');
@@ -59,7 +63,7 @@ switch ($event->type) {
     
             if ($is_upgrade == 1) {
                 update_post_meta($job_id, 'job_featured', 1);
-                jobster_insert_invoice('job_upgraded_featured', $job_id, $company_id, 0, 1);
+                jobster_insert_invoice('job_upgraded_featured', $job_id, $company_id, 0, 0, 1);
 
                 jobster_email_payment_to_admin($job_id, $company_id, 1);
             } else {
@@ -76,9 +80,9 @@ switch ($event->type) {
 
                 if ($is_featured == 1) {
                     update_post_meta($job_id, 'job_featured', 1);
-                    jobster_insert_invoice('featured_job', $job_id, $company_id, 1, 0);
+                    jobster_insert_invoice('featured_job', $job_id, $company_id, 0, 1, 0);
                 } else {
-                    jobster_insert_invoice('standard_job_posting', $job_id, $company_id, 0, 0);
+                    jobster_insert_invoice('standard_job_posting', $job_id, $company_id, 0, 0, 0);
                 }
 
                 jobster_email_payment_to_admin($job_id, $company_id, 0);
@@ -86,10 +90,17 @@ switch ($event->type) {
         }
 
         if ($payment_type == 'plan') {
-            $company_id = $event->data->object->metadata->company_id;
-            $plan_id = $event->data->object->metadata->plan_id;
+            if (isset($event->data->object->metadata->candidate_id)) {
+                $candidate_id = $event->data->object->metadata->candidate_id;
+                $plan_id = $event->data->object->metadata->plan_id;
+                
+                jobster_update_candidate_membership($candidate_id, $plan_id);
+            } else {
+                $company_id = $event->data->object->metadata->company_id;
+                $plan_id = $event->data->object->metadata->plan_id;
 
-            jobster_update_company_membership($company_id, $plan_id);
+                jobster_update_company_membership($company_id, $plan_id);
+            }
         }
 
         wp_redirect($redirect);
