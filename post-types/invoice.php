@@ -155,7 +155,7 @@ if (!function_exists('jobster_item_types')):
 endif;
 
 if (!function_exists('jobster_insert_invoice')):
-    function jobster_insert_invoice($item_type, $item_id, $company_id, $is_featured, $is_upgrade) {
+    function jobster_insert_invoice($item_type, $item_id, $company_id, $candidate_id, $is_featured, $is_upgrade = 0) {
         $post = array(
             'post_type'   => 'invoice', 
             'post_status' => 'publish',
@@ -185,6 +185,7 @@ if (!function_exists('jobster_insert_invoice')):
         update_post_meta($post_id, 'invoice_item_id', $item_id);
         update_post_meta($post_id, 'invoice_item_price', $price);
         update_post_meta($post_id, 'invoice_company_id', $company_id);
+        update_post_meta($post_id, 'invoice_candidate_id', $candidate_id);
 
         $new_post = array(
            'ID'         => $post_id,

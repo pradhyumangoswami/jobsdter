@@ -409,7 +409,7 @@ if (!function_exists('jobster_update_company_membership')):
         update_post_meta($company_id, 'company_plan_activation', $date);
 
         if ($is_free === false) {
-            jobster_insert_invoice('membership_plan', $plan_id, $company_id, 0, 0);
+            jobster_insert_invoice('membership_plan', $plan_id, $company_id, 0, 0, 0);
         }
 
         $subject = sprintf(__('[%s] Membership Plan Activated', 'jobster'), get_option('blogname'));
@@ -417,6 +417,61 @@ if (!function_exists('jobster_update_company_membership')):
         $message .= sprintf(__('Membership Type: %s', 'jobster'), get_the_title($plan_id));
 
         wp_mail($company_email, $subject, $message);
+    }
+endif;
+
+if (!function_exists('jobster_update_candidate_membership')):
+    function jobster_update_candidate_membership($candidate_id, $plan_id, $is_free = false) {
+        $plan_listings = get_post_meta(
+            $plan_id,
+            'membership_submissions_no',
+            true
+        );
+        $plan_unlimited  = get_post_meta(
+            $plan_id,
+            'membership_unlim_submissions',
+            true
+        );
+        $plan_featured_listings = get_post_meta(
+            $plan_id,
+            'membership_featured_submissions_no',
+            true
+        );
+        $plan_cv_access = get_post_meta(
+            $plan_id,
+            'membership_cv_access',
+            true
+        );
+        $candidate_email = get_post_meta($candidate_id, 'candidate_email', true);
+
+        update_post_meta($candidate_id, 'candidate_plan', $plan_id);
+        update_post_meta($candidate_id, 'candidate_plan_listings', $plan_listings);
+        update_post_meta($candidate_id, 'candidate_plan_unlimited', $plan_unlimited);
+        update_post_meta($candidate_id, 'candidate_plan_featured', $plan_featured_listings);
+        update_post_meta($candidate_id, 'candidate_plan_cv_access', $plan_cv_access);
+
+        if ($is_free === true) {
+            update_post_meta($candidate_id, 'candidate_plan_free', 1);
+        } else {
+            update_post_meta($candidate_id, 'candidate_plan_free', '');
+        }
+
+        $time = time(); 
+        $date = date('Y-m-d H:i:s', $time);
+
+        update_post_meta($candidate_id, 'candidate_plan_activation', $date);
+
+        if ($is_free === false) {
+            jobster_insert_invoice('membership_plan', $plan_id, 0, $candidate_id, 0);
+        }
+
+        $subject = sprintf(__('[%s] Membership Plan Activated', 'jobster'), get_option('blogname'));
+        $message = sprintf(__('You have a new membership plan on %s is activated.', 'jobster'), get_option('blogname')) . "\r\n\r\n";
+        $message .= sprintf(__('Membership Type: %s', 'jobster'), get_the_title($plan_id));
+
+        if ($candidate_email) {
+            wp_mail($candidate_email, $subject, $message);
+        }
     }
 endif;
 ?>

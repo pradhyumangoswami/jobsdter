@@ -143,6 +143,7 @@ if (!function_exists('jobster_add_candidate_metaboxes')):
         add_meta_box('candidate-social-section', __('Social Media', 'jobster'), 'jobster_candidate_social_media_render', 'candidate', 'normal', 'default');
         add_meta_box('candidate-job-alerts-section', __('Job Alerts', 'jobster'), 'jobster_candidate_job_alerts_render', 'candidate', 'normal', 'default');
         add_meta_box('candidate-user-section', __('User', 'jobster'), 'jobster_candidate_user_render', 'candidate', 'normal', 'default');
+        add_meta_box('candidate-membership-section', __('Membership Plan', 'jobster'), 'jobster_candidate_membership_render', 'candidate', 'side', 'default');
     }
 endif;
 
@@ -912,6 +913,57 @@ if (!function_exists('jobster_candidate_user_render')):
     }
 endif;
 
+if (!function_exists('jobster_candidate_membership_render')):
+    function jobster_candidate_membership_render($post) {
+        $selected_plan = esc_html(get_post_meta($post->ID, 'candidate_plan', true));
+        $membership_settings = get_option('jobster_membership_settings');
+        $payment_type = isset($membership_settings['jobster_payment_type_field'])
+                        ? $membership_settings['jobster_payment_type_field']
+                        : '';
+
+        if ($payment_type == 'plan') {
+            $plans_list = '';
+
+            $args = array(
+                'post_type'   => 'membership',
+                'post_status' => 'publish',
+                'meta_key'    => 'membership_plan_price',
+                'orderby'     => 'meta_value_num',
+                'order'       => 'ASC'
+            );
+
+            $plans = get_posts($args);
+
+            foreach ($plans as $plan) {
+                $plans_list .= '<option value="' . $plan->ID . '"';
+                if ($plan->ID == $selected_plan) {
+                    $plans_list .= ' selected';
+                }
+                $plans_list .= '>' . $plan->post_title . '</option>';
+            }
+
+            wp_reset_query();
+
+            print '
+                <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                    <tr>
+                        <td width="100%" valign="top">
+                            <div class="form-field pxp-is-custom pxp-is-last">
+                                <label for="candidate_plan_manual">' . __('Manually Assign a Membership Plan', 'jobster') . '</label><br />
+                                <select id="candidate_plan_manual" name="candidate_plan_manual">
+                                    <option value="">' . __('None', 'jobster') . '</option>
+                                    ' . $plans_list . '
+                                </select>
+                            </div>
+                        </td>
+                    </tr>
+                </table>';
+        } else {
+            print '<p>' . __('Enable membership plans in the plugin settings to assign membership plans to candidates.', 'jobster') . '</p>';
+        }
+    }
+endif;
+
 if (!function_exists('jobster_candidate_meta_save')): 
     function jobster_candidate_meta_save($post_id) {
         $is_autosave = wp_is_post_autosave($post_id);
@@ -1121,6 +1173,12 @@ if (!function_exists('jobster_candidate_meta_save')):
         }
         if (isset($_POST['candidate_user'])) {
             update_post_meta($post_id, 'candidate_user', sanitize_text_field($_POST['candidate_user']));
+        }
+        
+        // Handle candidate membership plan assignment
+        if (isset($_POST['candidate_plan_manual']) && $_POST['candidate_plan_manual'] != '') {
+            $plan_id = sanitize_text_field($_POST['candidate_plan_manual']);
+            jobster_update_candidate_membership($post_id, $plan_id);
         }
 
         $candidates_fields_settings = get_option('jobster_candidates_fields_settings');
