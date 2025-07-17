@@ -75,6 +75,8 @@ require_once 'services/update-company-profile.php';
 require_once 'services/save-job.php';
 require_once 'services/update-candidate-profile.php';
 require_once 'services/subscription.php';
+require_once 'services/candidate-subscription.php';
+require_once 'services/candidate-subscription-handlers.php';
 require_once 'services/contact-block.php';
 require_once 'services/paypal.php';
 require_once 'services/stripe.php';

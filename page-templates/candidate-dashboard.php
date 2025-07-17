@@ -76,6 +76,9 @@ jobster_get_candidate_dashboard_side($candidate_id, 'dashboard'); ?>
             <?php echo esc_html($candidate_name); ?>!
         </p>
 
+        <!-- Subscription Widget -->
+        <?php jobster_display_candidate_subscription_widget($candidate_id); ?>
+
         <div class="row mt-4 mt-lg-5 align-items-center">
             <div class="col-sm-6 col-xxl-3">
                 <div class="pxp-dashboard-stats-card bg-primary bg-opacity-10 mb-3 mb-xxl-0">
