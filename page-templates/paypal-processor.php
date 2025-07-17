@@ -63,7 +63,7 @@ if (isset($_GET['token']) && isset($_GET['PayerID'])) {
 
         if ($is_upgrade == 1) {
             update_post_meta($job_id, 'job_featured', 1);
-                            jobster_insert_invoice('job_upgraded_featured', $job_id, $company_id, 0, 0, 1);
+            jobster_insert_invoice('job_upgraded_featured', $job_id, $company_id, 0, 1);
 
             jobster_email_payment_to_admin($job_id, $company_id, 1);
         } else {
@@ -80,9 +80,9 @@ if (isset($_GET['token']) && isset($_GET['PayerID'])) {
 
             if ($is_featured == 1) {
                 update_post_meta($job_id, 'job_featured', 1);
-                jobster_insert_invoice('featured_job', $job_id, $company_id, 0, 1, 0);
+                jobster_insert_invoice('featured_job', $job_id, $company_id, 1, 0);
             } else {
-                jobster_insert_invoice('standard_job_posting', $job_id, $company_id, 0, 0, 0);
+                jobster_insert_invoice('standard_job_posting', $job_id, $company_id, 0, 0);
             }
 
             jobster_email_payment_to_admin($job_id, $company_id, 0);

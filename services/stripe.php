@@ -90,21 +90,7 @@ if (!function_exists('jobster_stripe_pay_membership_plan')):
             global $current_user;
             $current_user = wp_get_current_user();
 
-            $is_candidate = jobster_user_is_candidate($current_user->ID);
-            $company_id = 0;
-            $candidate_id = 0;
-            $success_url = '';
-            $cancel_url = '';
-            
-            if ($is_candidate) {
-                $candidate_id = jobster_get_candidate_by_userid($current_user->ID);
-                $success_url = jobster_get_page_link('candidate-dashboard-subscriptions.php');
-                $cancel_url = jobster_get_page_link('candidate-dashboard-subscriptions.php');
-            } else {
-                $company_id = jobster_get_company_by_userid($current_user->ID);
-                $success_url = jobster_get_page_link('company-dashboard-subscriptions.php');
-                $cancel_url = jobster_get_page_link('company-dashboard-subscriptions.php');
-            }
+            $company_id = jobster_get_company_by_userid($current_user->ID);
 
             $plan_price = get_post_meta($plan_id, 'membership_plan_price', true);
             $plan_price = floatval($plan_price) * 100;
@@ -115,13 +101,6 @@ if (!function_exists('jobster_stripe_pay_membership_plan')):
                                 : '';
 
             $payment_description = $plan->post_title . ' ' . __('membership plan payment on', 'jobster') . ' ' . home_url();
-
-            $metadata = array('plan_id' => $plan_id);
-            if ($is_candidate) {
-                $metadata['candidate_id'] = $candidate_id;
-            } else {
-                $metadata['company_id'] = $company_id;
-            }
 
             $session = \Stripe\Checkout\Session::create([
                 'line_items' => [[
@@ -135,11 +114,14 @@ if (!function_exists('jobster_stripe_pay_membership_plan')):
                     'quantity' => 1,
                 ]],
                 'payment_intent_data' => [
-                    'metadata' => $metadata
+                    'metadata' => [
+                        'plan_id' => $plan_id,
+                        'company_id' => $company_id
+                    ]
                 ],
                 'mode' => 'payment',
-                'success_url' => $success_url,
-                'cancel_url' => $cancel_url,
+                'success_url' => jobster_get_page_link('company-dashboard-subscriptions.php'),
+                'cancel_url' => jobster_get_page_link('company-dashboard-subscriptions.php'),
             ]);
     
     
