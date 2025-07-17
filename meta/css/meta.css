@@ -1,0 +1,398 @@
+.pxp-d-flex {
+    display: flex;
+}
+.pxp-d-block {
+    display: block;
+}
+.pxp-layout-radio-container {
+    padding: 10px 0 15px 0;
+}
+.pxp-layout-radio {
+    width: 68px;
+    height: 110px;
+    float: left;
+    margin-right: 10px;
+}
+.pxp-layout-radio input[type="radio"] {
+    position: absolute;
+    left: -9999em;
+}
+.pxp-layout-radio label {
+    padding-left: 0;
+    font-size: 14px;
+    text-transform: none;
+    line-height: 16px;
+}
+.pxp-layout-radio label > span {
+    background-color: #fff;
+    border: 2px solid #ddd;
+    width: 64px;
+    height: 64px;
+    border-radius: 5px;
+    float: left;
+    margin-right: 10px;
+    color: #fff;
+    position: relative;
+    background-size: 64px 64px;
+}
+.pxp-layout-radio label > span > span {
+    background-color: #0073aa;
+    font-size: 12px;
+    line-height: 12px;
+    padding: 2px;
+    position: absolute;
+    top: -4px;
+    right: -4px;
+    opacity: 0;
+    border-radius: 2px;
+}
+.pxp-layout-radio label input:checked+span {
+    border: 2px solid #0073aa;
+}
+.pxp-layout-radio label input:checked+span > span {
+    opacity: 1;
+}
+.pxp-layout-radio > .pxp-layout-radio-title {
+    text-align: center;
+    font-size: 12px;
+}
+.pxp-layout-radio.pxp-layout-radio-none label > span {
+    background-image: url(../images/page-header-none.png);
+}
+.pxp-layout-radio.pxp-layout-radio-animated_cards label > span {
+    background-image: url(../images/page-header-animated-cards.png);
+}
+.pxp-layout-radio.pxp-layout-radio-image_rotator label > span {
+    background-image: url(../images/page-header-image-rotator.png);
+}
+.pxp-layout-radio.pxp-layout-radio-illustration label > span {
+    background-image: url(../images/page-header-illustration.png);
+}
+.pxp-layout-radio.pxp-layout-radio-boxed label > span {
+    background-image: url(../images/page-header-boxed.png);
+}
+.pxp-layout-radio.pxp-layout-radio-image_bg label > span {
+    background-image: url(../images/page-header-image-background.png);
+}
+.pxp-layout-radio.pxp-layout-radio-top_search label > span {
+    background-image: url(../images/page-header-top-search.png);
+}
+.pxp-layout-radio.pxp-layout-radio-image_card label > span {
+    background-image: url(../images/page-header-image-card.png);
+}
+.pxp-layout-radio.pxp-layout-radio-half_image label > span {
+    background-image: url(../images/page-header-half-image.png);
+}
+.pxp-layout-radio.pxp-layout-radio-center_image label > span {
+    background-image: url(../images/page-header-center-image.png);
+}
+.pxp-layout-radio.pxp-layout-radio-image_pills label > span {
+    background-image: url(../images/page-header-image-pills.png);
+}
+.pxp-layout-radio.pxp-layout-radio-right_image label > span {
+    background-image: url(../images/page-header-right-image.png);
+}
+.pxp-ph-ac-new-logo-header,
+.pxp-ph-ac-new-info-header,
+.pxp-ph-ir-new-logo-header,
+.pxp-ph-ir-new-info-header,
+.pxp-ph-ir-new-photo-header,
+.pxp-ph-i-new-logo-header,
+.pxp-ph-b-new-info-header,
+.pxp-ph-ic-new-logo-header {
+    margin-bottom: 1rem;
+}
+.pxp-ph-ac-logo-image-placeholder-container,
+.pxp-ph-ac-edit-logo-image-placeholder-container,
+.pxp-ph-ac-photo-placeholder-container,
+.pxp-ph-ir-logo-image-placeholder-container,
+.pxp-ph-ir-edit-logo-image-placeholder-container,
+.pxp-ph-ir-photo-image-placeholder-container,
+.pxp-ph-ir-edit-photo-image-placeholder-container,
+.pxp-ph-i-logo-image-placeholder-container,
+.pxp-ph-i-edit-logo-image-placeholder-container,
+.pxp-ph-i-photo-placeholder-container,
+.pxp-ph-b-sfc-illustration-placeholder-container,
+.pxp-ph-b-sfc-icon-placeholder-container,
+.pxp-ph-b-bfc-illustration-placeholder-container,
+.pxp-ph-b-bfc-icon-placeholder-container,
+.pxp-ph-ib-photo-placeholder-container,
+.pxp-ph-ts-photo-placeholder-container,
+.pxp-ph-ic-logo-image-placeholder-container,
+.pxp-ph-ic-edit-logo-image-placeholder-container,
+.pxp-ph-ic-photo-placeholder-container,
+.pxp-ph-hi-photo-placeholder-container, 
+.pxp-ph-ci-photo-placeholder-container, 
+.pxp-ph-ci-bg-placeholder-container,
+.pxp-ph-ip-left-placeholder-container,
+.pxp-ph-ip-top-placeholder-container,
+.pxp-ph-ip-bottom-placeholder-container,
+.pxp-ph-ri-photo-placeholder-container, 
+.pxp-ph-ri-bg-placeholder-container {
+    width: 140px;
+    height: 140px;
+    background-color: #f5f5f5;
+    position: relative;
+    border-radius: 5px;
+    overflow: hidden;
+    border: 1px solid #e1e1e1;
+}
+#pxp-ph-ac-logo-image-placeholder,
+#pxp-ph-ac-edit-logo-image-placeholder,
+#pxp-ph-ac-photo-placeholder,
+#pxp-ph-ir-logo-image-placeholder,
+#pxp-ph-ir-edit-logo-image-placeholder,
+#pxp-ph-ir-photo-image-placeholder,
+#pxp-ph-ir-edit-photo-image-placeholder,
+#pxp-ph-i-logo-image-placeholder,
+#pxp-ph-i-edit-logo-image-placeholder,
+#pxp-ph-i-photo-placeholder,
+#pxp-ph-b-sfc-illustration-placeholder,
+#pxp-ph-b-sfc-icon-placeholder,
+#pxp-ph-b-bfc-illustration-placeholder,
+#pxp-ph-b-bfc-icon-placeholder,
+#pxp-ph-ib-photo-placeholder,
+#pxp-ph-ts-photo-placeholder,
+#pxp-ph-ic-logo-image-placeholder,
+#pxp-ph-ic-edit-logo-image-placeholder,
+#pxp-ph-ic-photo-placeholder,
+#pxp-ph-hi-photo-placeholder, 
+#pxp-ph-ci-photo-placeholder, 
+#pxp-ph-ci-bg-placeholder,
+#pxp-ph-ip-left-placeholder,
+#pxp-ph-ip-top-placeholder,
+#pxp-ph-ip-bottom-placeholder,
+#pxp-ph-ri-photo-placeholder, 
+#pxp-ph-ri-bg-placeholder {
+    top: 10px;
+    right: 10px;
+    bottom: 10px;
+    left: 10px;
+    position: absolute;
+    background-position: 50% 50%;
+    background-size: contain;
+    background-repeat: no-repeat;
+    cursor: pointer;
+}
+#pxp-ph-ac-delete-logo-image,
+#pxp-ph-ac-delete-edit-logo-image,
+#pxp-ph-ac-delete-photo,
+#pxp-ph-ir-delete-logo-image,
+#pxp-ph-ir-delete-edit-logo-image,
+#pxp-ph-ir-delete-photo-image,
+#pxp-ph-ir-delete-edit-photo-image,
+#pxp-ph-i-delete-logo-image,
+#pxp-ph-i-delete-edit-logo-image,
+#pxp-ph-i-delete-photo,
+#pxp-ph-b-sfc-delete-illustration,
+#pxp-ph-b-sfc-delete-icon,
+#pxp-ph-b-bfc-delete-illustration,
+#pxp-ph-b-bfc-delete-icon,
+#pxp-ph-ib-delete-photo,
+#pxp-ph-ts-delete-photo,
+#pxp-ph-ic-delete-logo-image,
+#pxp-ph-ic-delete-edit-logo-image,
+#pxp-ph-ic-delete-photo,
+#pxp-ph-hi-delete-photo, 
+#pxp-ph-ci-delete-photo, 
+#pxp-ph-ci-delete-bg,
+#pxp-ph-ip-left-delete,
+#pxp-ph-ip-top-delete,
+#pxp-ph-ip-bottom-delete,
+#pxp-ph-ri-delete-photo, 
+#pxp-ph-ri-delete-bg {
+    background-color: #e4393a;
+    position: absolute;
+    padding: 6px 8px;
+    font-size: 11px;
+    line-height: 12px;
+    color: #fff;
+    border-radius: 2px;
+    text-align: center;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    bottom: -34px;
+    right: 10px;
+    cursor: pointer;
+    z-index: 2;
+    -webkit-transition: all .2s ease-in-out;
+    -o-transition: all .2s ease-in-out;
+    transition: all .2s ease-in-out;
+}
+#pxp-ph-ac-delete-logo-image:hover,
+#pxp-ph-ac-delete-edit-logo-image:hover,
+#pxp-ph-ac-delete-photo:hover,
+#pxp-ph-ir-delete-logo-image:hover,
+#pxp-ph-ir-delete-edit-logo-image:hover,
+#pxp-ph-ir-delete-photo-image:hover,
+#pxp-ph-ir-delete-edit-photo-image:hover,
+#pxp-ph-i-delete-logo-image:hover,
+#pxp-ph-i-delete-edit-logo-image:hover,
+#pxp-ph-i-delete-photo:hover,
+#pxp-ph-b-sfc-delete-illustration:hover,
+#pxp-ph-b-sfc-delete-icon:hover,
+#pxp-ph-b-bfc-delete-illustration:hover,
+#pxp-ph-b-bfc-delete-icon:hover,
+#pxp-ph-ib-delete-photo:hover,
+#pxp-ph-ts-delete-photo:hover,
+#pxp-ph-ic-delete-logo-image:hover,
+#pxp-ph-ic-delete-edit-logo-image:hover,
+#pxp-ph-ic-delete-photo:hover,
+#pxp-ph-hi-delete-photo:hover, 
+#pxp-ph-ci-delete-photo:hover, 
+#pxp-ph-ci-delete-bg:hover,
+#pxp-ph-ip-left-delete:hover,
+#pxp-ph-ip-top-delete:hover,
+#pxp-ph-ip-bottom-delete:hover,
+#pxp-ph-ri-delete-photo:hover, 
+#pxp-ph-ri-delete-bg:hover {
+    background-color: #d13032;
+}
+.pxp-ph-ac-logo-image-placeholder-container.has-image:hover #pxp-ph-ac-delete-logo-image,
+.pxp-ph-ac-edit-logo-image-placeholder-container.has-image:hover #pxp-ph-ac-delete-edit-logo-image,
+.pxp-ph-ac-photo-placeholder-container.has-image:hover #pxp-ph-ac-delete-photo,
+.pxp-ph-ir-logo-image-placeholder-container.has-image:hover #pxp-ph-ir-delete-logo-image,
+.pxp-ph-ir-edit-logo-image-placeholder-container.has-image:hover #pxp-ph-ir-delete-edit-logo-image,
+.pxp-ph-ir-photo-image-placeholder-container.has-image:hover #pxp-ph-ir-delete-photo-image,
+.pxp-ph-ir-edit-photo-image-placeholder-container.has-image:hover #pxp-ph-ir-delete-edit-photo-image,
+.pxp-ph-i-logo-image-placeholder-container.has-image:hover #pxp-ph-i-delete-logo-image,
+.pxp-ph-i-edit-logo-image-placeholder-container.has-image:hover #pxp-ph-i-delete-edit-logo-image,
+.pxp-ph-i-photo-placeholder-container.has-image:hover #pxp-ph-i-delete-photo,
+.pxp-ph-b-sfc-illustration-placeholder-container.has-image:hover #pxp-ph-b-sfc-delete-illustration,
+.pxp-ph-b-sfc-icon-placeholder-container.has-image:hover #pxp-ph-b-sfc-delete-icon,
+.pxp-ph-b-bfc-illustration-placeholder-container.has-image:hover #pxp-ph-b-bfc-delete-illustration,
+.pxp-ph-b-bfc-icon-placeholder-container.has-image:hover #pxp-ph-b-bfc-delete-icon,
+.pxp-ph-ib-photo-placeholder-container.has-image #pxp-ph-ib-delete-photo,
+.pxp-ph-ts-photo-placeholder-container.has-image #pxp-ph-ts-delete-photo,
+.pxp-ph-ic-logo-image-placeholder-container.has-image:hover #pxp-ph-ic-delete-logo-image,
+.pxp-ph-ic-edit-logo-image-placeholder-container.has-image:hover #pxp-ph-ic-delete-edit-logo-image,
+.pxp-ph-ic-photo-placeholder-container.has-image:hover #pxp-ph-ic-delete-photo,
+.pxp-ph-hi-photo-placeholder-container.has-image:hover #pxp-ph-hi-delete-photo, 
+.pxp-ph-ci-photo-placeholder-container.has-image:hover #pxp-ph-ci-delete-photo, 
+.pxp-ph-ci-bg-placeholder-container.has-image:hover #pxp-ph-ci-delete-bg,
+.pxp-ph-ip-left-placeholder-container.has-image:hover #pxp-ph-ip-left-delete,
+.pxp-ph-ip-top-placeholder-container.has-image:hover #pxp-ph-ip-top-delete,
+.pxp-ph-ip-bottom-placeholder-container.has-image:hover #pxp-ph-ip-bottom-delete,
+.pxp-ph-ri-photo-placeholder-container.has-image:hover #pxp-ph-ri-delete-photo, 
+.pxp-ph-ri-bg-placeholder-container.has-image:hover #pxp-ph-ri-delete-bg {
+    display: block;
+    bottom: 10px;
+}
+.pxp-ph-ac-new-logo,
+.pxp-ph-ac-new-info,
+.pxp-ph-ir-new-logo,
+.pxp-ph-ir-new-info,
+.pxp-ph-ir-new-photo,
+.pxp-ph-i-new-logo,
+.pxp-ph-b-new-info,
+.pxp-ph-ic-new-logo {
+    display: none;
+}
+.pxp-ph-ac-new-logo-container,
+.pxp-ph-ac-new-info-container,
+.pxp-ph-ir-new-logo-container,
+.pxp-ph-ir-new-info-container,
+.pxp-ph-ir-new-photo-container,
+.pxp-ph-i-new-logo-container,
+.pxp-ph-b-new-info-container,
+.pxp-ph-ic-new-logo-container {
+    border: 1px solid #e1e1e1;
+    padding: 16px;
+    background: #f9f9f9;
+}
+.pxp-ph-ac-logos-list-item,
+.pxp-ph-ac-info-list-item,
+.pxp-ph-ir-logos-list-item,
+.pxp-ph-ir-info-list-item,
+.pxp-ph-ir-photos-list-item,
+.pxp-ph-i-logos-list-item,
+.pxp-ph-b-info-list-item,
+.pxp-ph-ic-logos-list-item,
+.pxp-candidate-gallery-list-item,
+.pxp-company-gallery-list-item,
+.pxp-ph-hi-key-features-list-item,
+.pxp-ph-ip-key-features-list-item,
+.pxp-ph-ri-key-features-list-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    height: 60px;
+}
+.pxp-ph-ac-info-list-item,
+.pxp-ph-ir-info-list-item,
+.pxp-ph-b-info-list-item,
+.pxp-ph-hi-key-features-list-item,
+.pxp-ph-ip-key-features-list-item,
+.pxp-ph-ri-key-features-list-item {
+    height: auto;
+}
+.pxp-ph-ac-logos-list-item > img,
+.pxp-ph-ir-logos-list-item > img,
+.pxp-ph-ir-photos-list-item > img,
+.pxp-ph-i-logos-list-item > img,
+.pxp-ph-ic-logos-list-item > img,
+.pxp-candidate-gallery-list-item > img,
+.pxp-company-gallery-list-item > img {
+    max-width: 60px;
+    height: auto;
+    max-height: 60px;
+    border: 1px solid #e5e5e5;
+}
+.list-group#pxp-ph-ac-logos-list .sortable-placeholder,
+.list-group#pxp-ph-ir-logos-list .sortable-placeholder,
+.list-group#pxp-ph-ir-photos-list .sortable-placeholder,
+.list-group#pxp-ph-i-logos-list .sortable-placeholder,
+.list-group#pxp-ph-ic-logos-list .sortable-placeholder,
+.list-group#candidate-gallery-list .sortable-placeholder,
+.list-group#company-gallery-list .sortable-placeholder {
+    height: 80px;
+}
+.list-group#pxp-ph-ac-info-list .sortable-placeholder,
+.list-group#pxp-ph-ir-info-list .sortable-placeholder,
+.list-group#pxp-ph-b-info-list .sortable-placeholder,
+.list-group#pxp-ph-hi-key-features-list .sortable-placeholder,
+.list-group#pxp-ph-ip-key-features-list .sortable-placeholder,
+.list-group#pxp-ph-ri-key-features-list .sortable-placeholder {
+    height: 56px;
+}
+#pxp-ph-ac-ok-logo, 
+#pxp-ph-ac-ok-edit-logo,
+#pxp-ph-ac-ok-info, 
+#pxp-ph-ac-ok-edit-info,
+#pxp-ph-ir-ok-logo, 
+#pxp-ph-ir-ok-edit-logo,
+#pxp-ph-ir-ok-info, 
+#pxp-ph-ir-ok-edit-info,
+#pxp-ph-ir-ok-photo, 
+#pxp-ph-ir-ok-edit-photo,
+#pxp-ph-i-ok-logo, 
+#pxp-ph-i-ok-edit-logo,
+#pxp-ph-b-ok-info, 
+#pxp-ph-b-ok-edit-info,
+#pxp-ph-ic-ok-logo, 
+#pxp-ph-ic-ok-edit-logo {
+    margin-right: 4px;
+}
+.pxp-ph-ac-info-list-item-number-label,
+.pxp-ph-ir-info-list-item-number-label,
+.pxp-ph-b-info-list-item-number-label {
+    width: 33%;
+    font-weight: bold;
+}
+.pxp-ph-ac-info-list-item-number-label > span,
+.pxp-ph-ir-info-list-item-number-label > span,
+.pxp-ph-b-info-list-item-number-label > span {
+    font-size: 24px;
+    margin-right: 10px;
+}
+.pxp-ph-ac-info-list-item-text,
+.pxp-ph-ir-info-list-item-text,
+.pxp-ph-b-info-list-item-text,
+.list-group-item-info,
+.pxp-ph-hi-key-features-list-item-text,
+.pxp-ph-ip-key-features-list-item-text,
+.pxp-ph-ri-key-features-list-item-text {
+    width: 50%;
+}

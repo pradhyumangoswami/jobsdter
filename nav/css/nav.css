@@ -1,0 +1,54 @@
+/*
+ Nav admin styles
+*/
+
+.pxp-icon-placeholder-container {
+    width: 100px;
+    height: 100px;
+    background-color: #f5f5f5;
+    position: relative;
+    border-radius: 5px;
+    overflow: hidden;
+    border: 1px solid #e1e1e1;
+}
+.pxp-icon-image-placeholder {
+    top: 20px;
+    right: 20px;
+    bottom: 20px;
+    left: 20px;
+    position: absolute;
+    background-position: 50% 50%;
+    background-size: 100px 100px;
+    background-repeat: no-repeat;
+    cursor: pointer;
+}
+.pxp-icon-placeholder-container.pxp-has-image .pxp-icon-image-placeholder {
+    background-size: contain;
+}
+.pxp-delete-icon-image {
+    background-color: #e4393a;
+    position: absolute;
+    padding: 6px 8px;
+    font-size: 11px;
+    line-height: 12px;
+    color: #fff;
+    border-radius: 2px;
+    text-align: center;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    bottom: -34px;
+    right: 10px;
+    cursor: pointer;
+    z-index: 2;
+    -webkit-transition: all .2s ease-in-out;
+    -o-transition: all .2s ease-in-out;
+    transition: all .2s ease-in-out;
+}
+.pxp-delete-icon-image:hover {
+    background-color: #d13032;
+}
+.pxp-icon-placeholder-container.pxp-has-image:hover .pxp-delete-icon-image {
+    display: block;
+    bottom: 10px;
+}

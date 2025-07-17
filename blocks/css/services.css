@@ -1,0 +1,189 @@
+.wp-block-jobster-plugin-services {
+    background-color: #f5f7fa;
+    padding: 20px;
+    border: 1px dotted #888;
+}
+.wp-block-jobster-plugin-services .services-icon-wrapper {
+    width: 100%;
+    background-color: #f5f5f5;
+    border: 1px solid #e1e1e1;
+    position: relative;
+    text-align: center;
+    padding: 10px;
+}
+.wp-block-jobster-plugin-services .services-icon {
+    font-size: 48px;
+    line-height: 60px;
+    display: block;
+    margin-bottom: 10px;
+}
+.wp-block-jobster-plugin-services .services-placeholder-img {
+    background: url(../images/services-block.png) no-repeat scroll center center;
+    background-size: contain;
+    height: 156px;
+}
+.wp-block-jobster-plugin-services .services-placeholder-header,
+.wp-block-jobster-plugin-services .services-placeholder-subheader {
+    text-align: center;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+    margin-top: 0;
+}
+.wp-block-jobster-plugin-services .services-placeholder-header {
+    margin-bottom: 0;
+}
+.wp-block-jobster-plugin-services .components-panel__header h2 {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+    font-size: 1.1em;
+}
+.wp-block-jobster-plugin-services .services-list-header {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+}
+.wp-block-jobster-plugin-services .pxp-block-services-bg-image-btn,
+.wp-block-jobster-plugin-services .services-list-new-bg-image-btn {
+    width: 100%;
+    height: 125px;
+    background: #fff;
+    border: 1px solid #e2e4e7;
+    text-align: center;
+    display: block;
+    background-repeat: no-repeat;
+    background-size: 50%;
+    background-position: 50% 50%;
+}
+.wp-block-jobster-plugin-services .services-list-container ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.wp-block-jobster-plugin-services .services-list-container ul li {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+    font-size: 13px;
+    background: #fff;
+    border: 1px solid #e2e4e7;
+    padding: 10px;
+    position: relative;
+    overflow: hidden;
+}
+.wp-block-jobster-plugin-services .services-list-container ul li:last-child {
+    margin-bottom: 10px;
+}
+.wp-block-jobster-plugin-services .services-list-container ul li a {
+    cursor: pointer;
+    display: block;
+    float: right;
+    margin-top: 18px;
+}
+.wp-block-jobster-plugin-services .services-list-new-form {
+    display: none;
+}
+.wp-block-jobster-plugin-services .services-list-new-header {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+}
+.services-list-new-image-placeholder {
+    width: 100%;
+    height: 125px;
+    background: #fff;
+    border: 1px solid #e2e4e7;
+    text-align: center;
+    background-repeat: no-repeat;
+    background-size: 50%;
+    background-position: 50% 30%;
+    position: relative;
+}
+.services-list-new-image-placeholder > span {
+    font-size: 50px;
+    margin-top: 20px;
+}
+.services-list-new-image-btn,
+.services-list-new-icon-btn {
+    position: absolute;
+    bottom: 2px;
+    width: calc(50% - 3px);
+    display: block;
+    padding: 0 8px !important;
+}
+.services-list-new-image-btn {
+    left: 2px;
+}
+.services-list-new-icon-btn {
+    right: 2px;
+}
+.services-list-new-form .component-color-indicator {
+    vertical-align: text-bottom;
+}
+.services-list-new-ok,
+.services-list-new-cancel {
+    margin-top: 10px;
+    margin-right: 5px;
+}
+.wp-block-jobster-plugin-services .services-list-item-img {
+    width: 100%;
+    height: 60px;
+    border: 1px solid #e2e4e7;
+    background-repeat: no-repeat;
+    background-size: 80%;
+    background-position: 50% 50%;
+}
+.wp-block-jobster-plugin-services .services-list-item-icon {
+    width: 100%;
+    height: 60px;
+    border: 1px solid #e2e4e7;
+    text-align: center;
+    font-size: 38px;
+    line-height: 38px;
+    padding-top: 11px;
+}
+.wp-block-jobster-plugin-services .services-list-item-title {
+    font-weight: 600;
+    margin-top: 7px;
+}
+.wp-block-jobster-plugin-services .services-list-item-text {
+    font-size: 12px;
+}
+.wp-block-jobster-plugin-services .services-list-container ul li a {
+    cursor: pointer;
+    display: block;
+    float: right;
+    margin-top: 18px;
+}
+.wp-block-jobster-plugin-services fieldset span.components-base-control__label {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+    font-size: 13px;
+    padding-bottom: 4px;
+}
+.wp-block-jobster-plugin-services .pxp-form-row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: calc(-.5 * 1.5rem);
+    margin-left: calc(-.5 * 1.5rem);
+    box-sizing: border-box;
+}
+.wp-block-jobster-plugin-services .pxp-form-col,
+.wp-block-jobster-plugin-services .pxp-form-col-2,
+.wp-block-jobster-plugin-services .pxp-form-col-4,
+.wp-block-jobster-plugin-services .pxp-form-col-8 {
+    flex-shrink: 0;
+    width: 100%;
+    max-width: 100%;
+    padding-right: calc(1.5rem * .5);
+    padding-left: calc(1.5rem * .5);
+    box-sizing: border-box;
+}
+@media (min-width: 576px) {
+    .wp-block-jobster-plugin-services .pxp-form-col {
+        flex: 0 0 auto;
+        width: 50%;
+    }
+    .wp-block-jobster-plugin-services .pxp-form-col-2 {
+        flex: 0 0 auto;
+        width: 16.66666667%;
+    }
+    .wp-block-jobster-plugin-services .pxp-form-col-4 {
+        flex: 0 0 auto;
+        width: 33.33333333%;
+    }
+    .wp-block-jobster-plugin-services .pxp-form-col-8 {
+        flex: 0 0 auto;
+        width: 66.66666667%;
+    }
+}

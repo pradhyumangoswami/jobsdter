@@ -1,0 +1,45 @@
+.wp-block-jobster-plugin-featured-candidates {
+    background-color: #f5f7fa;
+    padding: 20px;
+    border: 1px dotted #888;
+}
+.wp-block-jobster-plugin-featured-candidates .featured-candidates-placeholder-img {
+    background: url(../images/featured-candidates-block.png) no-repeat scroll center center;
+    background-size: contain;
+    height: 156px;
+}
+.wp-block-jobster-plugin-featured-candidates .featured-candidates-placeholder-header,
+.wp-block-jobster-plugin-featured-candidates .featured-candidates-placeholder-subheader {
+    text-align: center;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+    margin-top: 0;
+}
+.wp-block-jobster-plugin-featured-candidates .featured-candidates-placeholder-header {
+    margin-bottom: 0;
+}
+.wp-block-jobster-plugin-featured-candidates fieldset span.components-base-control__label {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+    font-size: 13px;
+    padding-bottom: 4px;
+}
+.wp-block-jobster-plugin-featured-candidates .pxp-form-row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: calc(-.5 * 1.5rem);
+    margin-left: calc(-.5 * 1.5rem);
+    box-sizing: border-box;
+}
+.wp-block-jobster-plugin-featured-candidates .pxp-form-col {
+    flex-shrink: 0;
+    width: 100%;
+    max-width: 100%;
+    padding-right: calc(1.5rem * .5);
+    padding-left: calc(1.5rem * .5);
+    box-sizing: border-box;
+}
+@media (min-width: 576px) {
+    .wp-block-jobster-plugin-featured-candidates .pxp-form-col {
+        flex: 0 0 auto;
+        width: 50%;
+    }
+}

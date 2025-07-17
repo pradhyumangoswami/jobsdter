@@ -1,0 +1,372 @@
+/*
+ Post types styles
+*/
+
+.pxp-company-logo-placeholder-container,
+.pxp-company-cover-placeholder-container,
+.pxp-candidate-photo-placeholder-container,
+.pxp-candidate-cover-placeholder-container,
+.pxp-job-cover-placeholder-container,
+.pxp-job-category-image-placeholder-container,
+.pxp-job-benefit-icon-placeholder-container,
+.pxp-edit-job-benefit-icon-placeholder-container {
+    width: 100px;
+    height: 100px;
+    background-color: #f5f5f5;
+    position: relative;
+    border-radius: 5px;
+    overflow: hidden;
+    border: 1px solid #e1e1e1;
+    margin-top: 12px;
+}
+.pxp-company-cover-placeholder-container,
+.pxp-candidate-cover-placeholder-container,
+.pxp-job-cover-placeholder-container {
+    width: 100%;
+}
+.pxp-company-logo-image-placeholder,
+.pxp-company-cover-image-placeholder,
+.pxp-candidate-photo-image-placeholder,
+.pxp-candidate-cover-image-placeholder,
+.pxp-job-cover-image-placeholder,
+.pxp-job-category-image-placeholder,
+.pxp-job-benefit-icon-placeholder,
+.pxp-edit-job-benefit-icon-placeholder {
+    top: 20px;
+    right: 20px;
+    bottom: 20px;
+    left: 20px;
+    position: absolute;
+    background-position: 50% 50%;
+    background-size: 100px 100px;
+    background-repeat: no-repeat;
+    cursor: pointer;
+}
+.pxp-company-cover-image-placeholder,
+.pxp-candidate-cover-image-placeholder,
+.pxp-job-cover-image-placeholder {
+    top: 10px;
+    right: 10px;
+    bottom: 10px;
+    left: 10px;
+}
+.pxp-company-logo-placeholder-container.pxp-has-image .pxp-company-logo-image-placeholder,
+.pxp-candidate-photo-placeholder-container.pxp-has-image .pxp-candidate-photo-image-placeholder,
+.pxp-job-category-image-placeholder-container.pxp-has-image .pxp-job-category-image-placeholder,
+.pxp-job-benefit-icon-placeholder-container.pxp-has-image .pxp-job-benefit-icon-placeholder,
+.pxp-edit-job-benefit-icon-placeholder-container.pxp-has-image .pxp-edit-job-benefit-icon-placeholder {
+    background-size: contain;
+}
+.pxp-company-cover-placeholder-container.pxp-has-image .pxp-company-cover-image-placeholder,
+.pxp-candidate-cover-placeholder-container.pxp-has-image .pxp-candidate-cover-image-placeholder,
+.pxp-job-cover-placeholder-container.pxp-has-image .pxp-job-cover-image-placeholder {
+    background-size: cover;
+}
+.pxp-delete-company-logo-image, 
+.pxp-delete-company-cover-image,
+.pxp-delete-candidate-photo-image, 
+.pxp-delete-candidate-cover-image,
+.pxp-delete-job-cover-image,
+.pxp-delete-job-category-image,
+.pxp-delete-job-benefit-icon,
+.pxp-delete-job-edit-benefit-icon {
+    background-color: #e4393a;
+    position: absolute;
+    padding: 6px 8px;
+    font-size: 11px;
+    line-height: 12px;
+    color: #fff;
+    border-radius: 2px;
+    text-align: center;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    bottom: -34px;
+    right: 10px;
+    cursor: pointer;
+    z-index: 2;
+    -webkit-transition: all .2s ease-in-out;
+    -o-transition: all .2s ease-in-out;
+    transition: all .2s ease-in-out;
+}
+.pxp-delete-company-logo-image:hover, 
+.pxp-delete-company-cover-image:hover,
+.pxp-delete-candidate-photo-image:hover, 
+.pxp-delete-candidate-cover-image:hover,
+.pxp-delete-job-cover-image:hover,
+.pxp-delete-job-category-image:hover,
+.pxp-delete-job-benefit-icon:hover,
+.pxp-delete-job-edit-benefit-icon:hover {
+    background-color: #d13032;
+}
+.pxp-company-logo-placeholder-container.pxp-has-image:hover .pxp-delete-company-logo-image, 
+.pxp-company-cover-placeholder-container.pxp-has-image:hover .pxp-delete-company-cover-image,
+.pxp-candidate-photo-placeholder-container.pxp-has-image:hover .pxp-delete-candidate-photo-image, 
+.pxp-candidate-cover-placeholder-container.pxp-has-image:hover .pxp-delete-candidate-cover-image,
+.pxp-job-cover-placeholder-container.pxp-has-image:hover .pxp-delete-job-cover-image,
+.pxp-job-category-image-placeholder-container.pxp-has-image:hover .pxp-delete-job-category-image,
+.pxp-job-benefit-icon-placeholder-container.pxp-has-image:hover .pxp-delete-job-benefit-icon,
+.pxp-edit-job-benefit-icon-placeholder-container.pxp-has-image:hover .pxp-delete-job-edit-benefit-icon {
+    display: block;
+    bottom: 10px;
+}
+.pxp-candidate-new-work,
+.pxp-candidate-new-edu,
+.pxp-candidate-new-file,
+.pxp-job-new-benefit {
+    display: none;
+}
+.pxp-candidate-new-work-container,
+.pxp-candidate-new-edu-container,
+.pxp-candidate-new-file-container,
+.pxp-job-new-benefit-container,
+.pxp-job-edit-benefit-container {
+    border: 1px solid #e1e1e1;
+    padding: 16px;
+    background: #f9f9f9;
+}
+.pxp-candidate-new-work-header,
+.pxp-candidate-new-edu-header,
+.pxp-candidate-new-file-header,
+.pxp-job-new-benefit-header,
+.pxp-job-edit-benefit-header {
+    margin-bottom: 1rem;
+}
+.form-field.pxp-is-custom {
+    margin-bottom: 0.7rem;
+}
+.form-field.pxp-is-custom.pxp-is-last {
+    margin-bottom: 0;
+}
+.form-field.pxp-is-custom label {
+    display: inline-block;
+    margin-bottom: 0.2rem;
+}
+.form-field.pxp-is-custom select {
+    width: 95%;
+}
+.list-group .list-group-item {
+    border: 1px solid #e1e1e1;
+    position: relative;
+    padding: 10px;
+    background: #f9f9f9;
+    cursor: move;
+}
+.list-group .list-group-item.pxp-candidate-cv-container,
+.list-group#pxp-candidate-files-list .list-group-item,
+.list-group .list-group-item.pxp-company-doc-container {
+    cursor: default;
+}
+.pxp-candidate-work-list-item,
+.pxp-candidate-edu-list-item,
+.pxp-candidate-files-list-item,
+.pxp-job-benefits-list-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.pxp-job-benefits-list-item img {
+    height: 60px;
+    width: auto;
+    border: 1px solid #e1e1e1;
+}
+.pxp-candidate-work-list-item-title,
+.pxp-candidate-work-list-item-company,
+.pxp-candidate-edu-list-item-title,
+.pxp-candidate-edu-list-item-school,
+.pxp-candidate-files-list-item-name,
+.pxp-job-benefits-list-item-title {
+    width: 40%;
+}
+.pxp-candidate-work-list-item-btns,
+.pxp-candidate-edu-list-item-btns,
+.pxp-candidate-files-list-item-btns,
+.pxp-job-benefits-list-item-btns {
+    width: 20%;
+    display: flex;
+    justify-content: flex-end;
+}
+.list-group .list-group-item .pxp-list-del-btn, 
+.list-group .list-group-item .pxp-list-edit-btn {
+    text-decoration: none;
+    color: #a00;
+    font-size: 16px;
+    line-height: 16px;
+    cursor: pointer;
+}
+.list-group .list-group-item .pxp-list-edit-btn {
+    margin-right: 10px;
+    color: #0073aa;
+}
+.list-group .list-group-item .pxp-list-del-btn:hover, 
+.list-group .list-group-item .pxp-list-edit-btn:hover {
+    opacity: .7;
+}
+.list-group .list-group-item:hover {
+    border: 1px solid #999;
+}
+.list-group .sortable-placeholder {
+    border: 1px dashed #bfbfbf;
+    height: 40px;
+    margin-bottom: 5px;
+}
+.pxp-candidate-new-work #pxp-ok-work, 
+.pxp-candidate-edit-work #pxp-ok-edit-work,
+.pxp-candidate-new-edu #pxp-ok-edu, 
+.pxp-candidate-edit-edu #pxp-ok-edit-edu,
+.pxp-candidate-new-file #pxp-ok-file,
+.pxp-job-new-benefit #pxp-ok-benefit,
+.pxp-job-edit-benefit #pxp-ok-edit-benefit {
+    margin-right: 4px;
+}
+.pxp-candidate-cv-container,
+.pxp-company-doc-container {
+    border: 1px solid #e1e1e1;
+    padding: 10px;
+    background: #f9f9f9;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    display: none;
+}
+.pxp-candidate-cv-container.pxp-show,
+.pxp-company-doc-container.pxp-show {
+    display: flex;
+}
+.pxp-candidate-cv-wrapper,
+.pxp-company-doc-wrapper {
+    padding-bottom: 18px;
+    margin-top: 1em;
+    margin-bottom: 6px;
+}
+#pxp-icons-modal .media-frame-title h1 {
+    font-size: 18px;
+}
+#pxp-icons-modal .media-modal-content {
+    -webkit-box-shadow: 0 16px 30px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 16px 30px rgba(0, 0, 0, 0.2);
+}
+#pxp-icons-modal .media-frame-title {
+    left: 0;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+#pxp-icons-modal .media-frame-content {
+    left: 0;
+    top: 100px;
+    bottom: 0;
+    border-bottom: 0 none;
+}
+#pxp-icons-modal .media-modal {
+    top: 100px;
+    right: 100px;
+    bottom: 100px;
+    left: 100px;
+}
+@media screen and (max-width: 767px) {
+    #pxp-icons-modal .media-modal {
+        top: 20px;
+        right: 20px;
+        bottom: 20px;
+        left: 20px;
+    }
+}
+#pxp-icons-modal .pxp-icons-modal-frame-content {
+    padding: 20px;
+}
+#pxp-icons-modal .pxp-search-icons-wrapper {
+    padding-left: 16px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+#pxp-icons-modal .pxp-search-icons {
+    position: relative;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+#pxp-icons-modal .pxp-search-icons span {
+    position: absolute;
+    top: 15px;
+    left: 24px;
+}
+#pxp-icons-modal #pxp-icons-modal-search-input {
+    padding-left: 24px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box
+}
+#pxp-icons-modal .pxp-icons-modal-subtitle {
+    color: #23282d;
+    font-size: 14px;
+    font-weight: 600;
+    padding-bottom: 20px;
+}
+#pxp-icons-modal .pxp-icons-modal-list .pxp-is-icon {
+    margin-bottom: 10px;
+}
+#pxp-icons-modal .pxp-icons-modal-list-fa {
+    margin-bottom: 20px;
+}
+.pxp-icons-modal-item {
+    font-size: 11px;
+    line-height: 16px;
+    padding: 6px 8px;
+    border: 1px solid #e8e8e8;
+    cursor: pointer;
+    border-radius: 4px;
+    color: #999;
+    -webkit-transition: all .2s ease-in-out;
+    -o-transition: all .2s ease-in-out;
+    transition: all .2s ease-in-out;
+}
+.pxp-icons-modal-item:hover {
+    border: 1px solid #0073aa;
+}
+.pxp-icons-modal-item span {
+    font-size: 16px;
+    line-height: 16px;
+    color: #333;
+    width: 22px;
+    text-align: center;
+}
+.pxp-icons-modal-item.pxp-is-selected {
+    background-color: #0073aa;
+    border: 1px solid #0073aa;
+}
+.pxp-icons-modal-item.pxp-is-selected, 
+.pxp-icons-modal-item.pxp-is-selected span {
+    color: #fff;
+}
+#pxp-icons-modal .media-frame input, 
+#pxp-icons-modal .media-frame textarea {
+    padding: 6px 8px;
+}
+.datepicker.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 1000;
+    display: none;
+    float: left;
+    min-width: 160px;
+    padding: 5px 0;
+    margin: 2px 0 0;
+    font-size: 13px;
+    background-color: #fff;
+    text-align: left;
+    list-style: none;
+    -webkit-background-clip: padding-box;
+          background-clip: padding-box;
+    border: 1px solid #dfdfdf;
+    border-radius: 2px;
+    -webkit-box-shadow: 0 2px 6px rgba(0, 0, 0, .1);
+          box-shadow: 0 2px 6px rgba(0, 0, 0, .1);
+}
+.pxp-candidate-new-file #candidate_filename {
+    line-height: 30px;
+    margin-left: 10px;
+}
