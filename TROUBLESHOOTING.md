@@ -2,7 +2,32 @@
 
 ## 🚨 Common Issues and Solutions
 
-### 1. **Subscription Page Not Accessible**
+### 1. **Admin Interface Not Showing**
+
+**Problem**: The subscription meta box, columns, or filters don't appear in WordPress admin.
+
+**Solution**:
+1. **Check if fix file is loaded**:
+   - Verify `admin/subscription-admin-fix.php` is included in `jobster-plugin.php`
+   - Should see: `require_once 'admin/subscription-admin-fix.php';`
+
+2. **Initialize demo data**:
+   - Go to `WordPress Admin → Candidates → All Candidates`
+   - Look for blue notice: "Some candidates don't have subscription data"
+   - Click "Initialize Demo Data" button
+   - This will set up test subscription data for all candidates
+
+3. **Check candidate post type**:
+   - Ensure you're viewing the correct post type: `/wp-admin/edit.php?post_type=candidate`
+   - Meta box should appear in sidebar when editing any candidate
+   - Subscription column should appear in candidates list
+
+4. **Clear cache and refresh**:
+   - Deactivate and reactivate the plugin
+   - Clear any caching plugins
+   - Hard refresh browser (Ctrl+F5)
+
+### 2. **Subscription Page Not Accessible**
 
 **Problem**: The subscription page shows 404 or doesn't load.
 
@@ -110,7 +135,24 @@
 
 ## 🔍 Debugging Steps
 
-### Step 1: Check Plugin Activation
+### Step 1: Test Admin Interface
+
+1. **Go to WordPress Admin → Candidates → All Candidates**
+2. **Look for**:
+   - "Subscription" column in the candidates list
+   - Filter dropdown with "All Subscriptions" option
+   - Blue notice about initializing demo data (if no data exists)
+
+3. **Edit any candidate**:
+   - Look for "Subscription Management" meta box in right sidebar
+   - Should contain status dropdowns, date field, and quick action buttons
+
+4. **If missing**:
+   - Check if `admin/subscription-admin-fix.php` is included
+   - Try deactivating/reactivating plugin
+   - Initialize demo data using the button
+
+### Step 2: Check Plugin Activation
 ```php
 // Add to functions.php temporarily
 add_action('wp_footer', function() {

@@ -78,6 +78,7 @@ require_once 'services/subscription.php';
 require_once 'services/candidate-subscription.php';
 require_once 'services/candidate-subscription-handlers.php';
 require_once 'admin/subscription-admin.php';
+require_once 'admin/subscription-admin-fix.php';
 require_once 'services/contact-block.php';
 require_once 'services/paypal.php';
 require_once 'services/stripe.php';
