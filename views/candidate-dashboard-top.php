@@ -49,6 +49,7 @@ if (!function_exists('jobster_get_candidate_dashboard_top')):
 
         $dashboard_link = jobster_get_page_link('candidate-dashboard.php');
         $profile_link = jobster_get_page_link('candidate-dashboard-profile.php');
+        $subscriptions_link = jobster_get_page_link('candidate-dashboard-subscriptions.php');
         $apps_link = jobster_get_page_link('candidate-dashboard-apps.php');
         $favs_link = jobster_get_page_link('candidate-dashboard-favs.php');
         $password_link = jobster_get_page_link('candidate-dashboard-password.php');

@@ -49,6 +49,7 @@ if (!function_exists('jobster_get_candidate_dashboard_side')):
 
         $dashboard_link = jobster_get_page_link('candidate-dashboard.php');
         $profile_link = jobster_get_page_link('candidate-dashboard-profile.php');
+        $subscriptions_link = jobster_get_page_link('candidate-dashboard-subscriptions.php');
         $apps_link = jobster_get_page_link('candidate-dashboard-apps.php');
         $favs_link = jobster_get_page_link('candidate-dashboard-favs.php');
         $password_link = jobster_get_page_link('candidate-dashboard-password.php');
@@ -99,6 +100,17 @@ if (!function_exists('jobster_get_candidate_dashboard_side')):
                             <a href="<?php echo esc_url($profile_link); ?>">
                                 <span class="fa fa-pencil"></span>
                                 <?php esc_html_e('Edit Profile', 'jobster'); ?>
+                            </a>
+                        </li>
+                    <?php }
+                    if ($subscriptions_link != '') { ?>
+                        <li class="<?php if ($active_tab == 'subscriptions') {
+                                    echo esc_attr('pxp-active');
+                                } ?>"
+                        >
+                            <a href="<?php echo esc_url($subscriptions_link); ?>">
+                                <span class="fa fa-credit-card"></span>
+                                <?php esc_html_e('Subscriptions', 'jobster'); ?>
                             </a>
                         </li>
                     <?php }
